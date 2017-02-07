@@ -113,9 +113,9 @@ DeskTopSize 2x2
 # These paths are colon-separated lists, just like regular unix PATH
 #=============================================================================#
 
-ModulePath /usr/local/lib/X11/fvwm95/
-PixmapPath /usr/local/lib/X11/pixmaps/
-IconPath   /usr/local/lib/X11/mini-icons/
+ModulePath /home/pi/pi/.local/usr/lib/X11/fvwm95/
+PixmapPath /home/pi/pi/.local/usr/lib/X11/pixmaps/
+IconPath   /home/pi/pi/.local/usr/lib/X11/mini-icons/
 
 #=============================================================================#
 # Set the decoration styles and window options
@@ -227,7 +227,9 @@ DestroyFunc "InitFunction"
 AddToFunc "InitFunction"    "I" Exec xsetroot -solid Cyan4 \
                                               -cursor_name top_left_arrow
 +                           "I" Module FvwmButtons
-+                           "I" Module FvwmTaskBar
+#+                           "I" Module FvwmTaskBar
+# uncomment line below and comment line above to use XClass taskbar
++			    "I" Module XClassTaskbar
 +			    "I" Module FvwmBanner
 +                           "I" Read  .fvwm95rc-settings
 #+			    "I" Module FvwmAudio
@@ -572,7 +574,7 @@ AddToMenu "Module-Popup" \
 DestroyMenu "Documents"
 AddToMenu "Documents" \
   "FVWM95%mini.win95.xpm%"		Exec netscape \
-					/usr/local/lib/X11/fvwm95/index.html
+					/home/pi/pi/.local/usr/lib/X11/fvwm95/index.html
 
 
 #------------------------------------------------------------------------------
@@ -1147,7 +1149,7 @@ Style "MiniButtons"  NoTitle,NoHandles,Sticky,StaysOnTop,WindowListSkip\
 #------------------ FvwmScript
 #------------------------------------------------------------------------------
 
-*FvwmScriptPath /usr/local/lib/X11/fvwm95/scripts
+*FvwmScriptPath /home/pi/pi/.local/usr/lib/X11/fvwm95/scripts
 
        
 #-------------------------------------------------------------------------------
@@ -1181,7 +1183,7 @@ Style "FvwmTaskBar" NoTitle,BorderWidth 4,HandleWidth 4,Sticky, \
 
 # Now the goodies....
 
-*FvwmTaskBarGoodyLoadablePlugins /usr/local/lib/X11/fvwm95/plugins
+*FvwmTaskBarGoodyLoadablePlugins /home/pi/pi/.local/usr/lib/X11/fvwm95/plugins
 *FvwmTaskBarGoodyLoadableQuiet
 
 # Modem
@@ -1231,7 +1233,7 @@ Style "FvwmTaskBar" NoTitle,BorderWidth 4,HandleWidth 4,Sticky, \
 # Battery Status
 #*FvwmTaskBarGoodyLoadableSymbol BatStatModuleSymbol
 #*FvwmTaskBarGoodyLoadableId BatStat
-#*FvwmTaskBarModuleIconPathBatStat /usr/local/lib/X11/mini-icons/
+#*FvwmTaskBarModuleIconPathBatStat /home/pi/pi/.local/usr/lib/X11/mini-icons/
 
 #------------------------------------------------------------------------------
 #------------------ FvwmWinList

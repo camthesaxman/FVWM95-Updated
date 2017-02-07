@@ -229,7 +229,7 @@ static void * BatStatModule_Init(char *id) {
 #endif
 
 	mif = NULL;
-	(void *) mif = calloc(1, sizeof(BatStatInfo_t));
+	mif = calloc(1, sizeof(BatStatInfo_t));
 	if(mif == NULL) {
 	  perror("FvwmTaskBar. BatStatModule.Init()");
 	  return NULL;
